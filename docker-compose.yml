@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ssh.cyrhades.fr:
+    build: ssh
+  webssh.cyrhades.fr:
+    build: webssh
+    ports:
+    - ${PORT}:8888
+  mommy-morse.cyrhades.fr:
+    image: anssi/fcsc2022-hardware-mommy-morse:latest
+    ports:
+      - ${PORT_SSH}:4000
